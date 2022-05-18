@@ -16,7 +16,7 @@ endfunction
 
 %Função que retorna o k efetivo
 function kef = k_efetivo(u, W, k, L, d, h)
-  kef = ((2 .*(h-u)*k)./sqrt(((h-u).^2) + d^2));
+  kef = (-2 .*k.*(h-u).*(1 - (L./sqrt(((h-u).^2) + d^2))))./u;
 endfunction
 
 %Chamada das funções
